@@ -17,12 +17,19 @@ function hashPassword(password: string): string {
   return crypto.createHash('sha256').update(password).digest('hex');
 }
 
+const SEED_USERS: User[] = [
+  { id: 'user-000', email: 'superadmin@levitatedata.com', name: 'Super Admin', role: 'super_admin', passwordHash: hashPassword('admin123'), createdAt: '2024-01-01T00:00:00.000Z' },
+  { id: 'user-001', email: 'admin@levitatedata.com', name: 'Admin', role: 'admin', passwordHash: hashPassword('admin123'), createdAt: '2024-01-01T00:00:00.000Z' },
+  { id: 'user-002', email: 'demo@levitatedata.com', name: 'Demo User', role: 'user', passwordHash: hashPassword('demo123'), createdAt: '2024-01-01T00:00:00.000Z' },
+];
+
 export function getUsers(): User[] {
   try {
     const raw = fs.readFileSync(USERS_FILE, 'utf-8');
-    return JSON.parse(raw) as User[];
+    const users = JSON.parse(raw) as User[];
+    return users.length > 0 ? users : SEED_USERS;
   } catch {
-    return [];
+    return SEED_USERS;
   }
 }
 
