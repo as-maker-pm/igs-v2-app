@@ -17,7 +17,7 @@ function decodeSessionEdge(token: string): { role?: string; exp?: number } | nul
   }
 }
 
-export default function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isPublic =
