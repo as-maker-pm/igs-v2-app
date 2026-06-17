@@ -1,7 +1,8 @@
 import fs from 'fs';
 import crypto from 'crypto';
 
-const USERS_FILE = '/tmp/igs-v2-app/data/users.json';
+import path from 'path';
+const USERS_FILE = path.join(process.cwd(), 'data', 'users.json');
 
 export interface User {
   id: string;

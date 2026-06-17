@@ -1,6 +1,7 @@
 import fs from 'fs';
+import path from 'path';
 
-const TENANTS_FILE = '/tmp/igs-v2-app/data/tenants.json';
+const TENANTS_FILE = path.join(process.cwd(), 'data', 'tenants.json');
 
 export interface TenantFeatures {
   driveTime: boolean;
