@@ -38,12 +38,35 @@ export const PLAN_FEATURES: Record<Tenant['plan'], TenantFeatures> = {
   Enterprise:   { driveTime: true,  export: true,  multiSite: true,  pdfExport: true  },
 };
 
+const SEED_TENANTS: Tenant[] = [
+  {
+    id: 'tenant-001',
+    name: 'Outdoor Expressions',
+    brandName: 'Outdoor Expressions',
+    slug: 'outdoor-expressions',
+    industry: 'Landscaping & Lawn Care',
+    plan: 'Enterprise',
+    primaryContact: { name: 'John Smith', email: 'john@outdoorexpressions.com' },
+    status: 'Active',
+    driveTimeDefaults: { m5: true, m10: true, m15: false },
+    demandModel: 'standard',
+    colorScheme: 'default',
+    demandFile: 'zip_data.json',
+    providerFile: 'providers.geojson',
+    features: PLAN_FEATURES['Enterprise'],
+    userCount: 3,
+    lastActive: '2024-03-15T00:00:00.000Z',
+    createdAt: '2024-01-01T00:00:00.000Z',
+  },
+];
+
 export function getTenants(): Tenant[] {
   try {
     const raw = fs.readFileSync(TENANTS_FILE, 'utf-8');
-    return JSON.parse(raw) as Tenant[];
+    const tenants = JSON.parse(raw) as Tenant[];
+    return tenants.length > 0 ? tenants : SEED_TENANTS;
   } catch {
-    return [];
+    return SEED_TENANTS;
   }
 }
 
