@@ -1,0 +1,26 @@
+[
+  {
+    "id": "user-000",
+    "email": "superadmin@levitatedata.com",
+    "name": "Super Admin",
+    "role": "super_admin",
+    "passwordHash": "e34f92a20532a873cb3184398070b4b82a8fa29cf48572c203dc5f0fa6158231",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "user-001",
+    "email": "admin@levitatedata.com",
+    "name": "Admin",
+    "role": "admin",
+    "passwordHash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "user-002",
+    "email": "demo@levitatedata.com",
+    "name": "Demo User",
+    "role": "user",
+    "passwordHash": "d3ad9315b7be5dd53b31a273b3b3aba5defe700808305aa16a3062b76658a791",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]

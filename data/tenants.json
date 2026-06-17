@@ -1,0 +1,23 @@
+[
+  {
+    "id": "tenant-001",
+    "name": "Outdoor Expressions",
+    "brandName": "Outdoor Expressions",
+    "slug": "outdoor-expressions",
+    "industry": "Landscaping & Lawn Care",
+    "plan": "Enterprise",
+    "primaryContact": { "name": "IGS Admin", "email": "admin@levitatedata.com" },
+    "adminInvite": { "name": "IGS Admin", "email": "admin@levitatedata.com" },
+    "status": "Active",
+    "driveTimeDefaults": { "m5": true, "m10": true, "m15": true },
+    "demandModel": "Huff gravity model (default)",
+    "colorScheme": "Purple / Green (default)",
+    "demandFile": "demand_outdoor-expressions.csv",
+    "providerFile": "providers_outdoor-expressions.csv",
+    "dataVintage": "Q1 2024",
+    "features": { "driveTime": true, "export": true, "multiSite": true, "pdfExport": true },
+    "userCount": 2,
+    "lastActive": "2024-06-01T00:00:00.000Z",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]
